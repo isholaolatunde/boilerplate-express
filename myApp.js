@@ -5,7 +5,8 @@ app.use("/public", express.static(__dirname + "/public"));
 
 app.get("/", function(req, res) {
 
-res.json("/json", {"message" : "Hello Jason"})
+res.sendFile(__dirname + "/views/index.html")
+res.json({message : 'Hello Jason'})
 });
 
 
