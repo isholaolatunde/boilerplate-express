@@ -1,13 +1,16 @@
 let express = require('express');
 let app = express();
 
+app.use("/public", express.static(__dirname + "/public"));
+
 app.get("/", function(req, res) {
-app.use("/public", express.static(__dirname + "/public"))
+
 res.sendFile(__dirname + "/views/index.html")
 });
 
-
-
+app.listen(3000, () => {
+  console.log('Server is running on http://localhost:3000');
+});
 
 
 
